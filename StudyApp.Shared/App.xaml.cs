@@ -1,12 +1,15 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,10 +28,10 @@ namespace StudyApp
     /// </summary>
     public sealed partial class App : Application
     {
+        public string dbPath { get; set; }
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
-
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -52,8 +55,14 @@ namespace StudyApp
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
-#endif
 
+            this.dbPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "StudyApp.sqlite");
+            using (var dbase = new SQLite.SQLiteConnection(dbPath))
+            {
+                dbase.CreateTable<Members>();
+            }
+#endif
+           
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -87,9 +96,10 @@ namespace StudyApp
                         this.transitions.Add(c);
                     }
                 }
-
+                
                 rootFrame.ContentTransitions = null;
                 rootFrame.Navigated += this.RootFrame_FirstNavigated;
+                 
 #endif
 
                 // When the navigation stack isn't restored navigate to the first page,
@@ -105,6 +115,7 @@ namespace StudyApp
             Window.Current.Activate();
         }
 
+ 
 #if WINDOWS_PHONE_APP
         /// <summary>
         /// Restores the content transitions after the app has launched.
@@ -133,5 +144,6 @@ namespace StudyApp
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+        public string DBPath { get; set; }
     }
 }
