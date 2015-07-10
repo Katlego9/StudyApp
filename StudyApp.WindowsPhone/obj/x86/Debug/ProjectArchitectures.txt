@@ -1,1 +1,0 @@
-D:\Visual Studio 2013\Projects\StudyApp\StudyApp\StudyApp.WindowsPhone\StudyApp.WindowsPhone.csproj;x86

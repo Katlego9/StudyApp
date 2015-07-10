@@ -39,7 +39,7 @@ namespace StudyApp
                         Password = _member.Password,
 
                     };
-                    member.Add(member);
+                    members.Add(member);
                 }
             }
             return members;

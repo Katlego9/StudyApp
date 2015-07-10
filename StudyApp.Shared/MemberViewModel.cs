@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Windows.UI.Xaml;
 
@@ -58,25 +59,18 @@ namespace StudyApp
             }
         }
 
-
-
         #endregion "Properties"
 
         private StudyApp.App app = (Application.Current as App);
 
-        public MemberViewModel GetMember(int memberId)
+        public Members GetMember()
         {
-            var member = new MemberViewModel();
             using (var db = new SQLite.SQLiteConnection(app.DBPath))
             {
-                var _member = (db.Table<Members>().Where(
-                    c => c.Id == memberId)).Single();
-                _member.Id = member.Id;
-                _member.Name = member.Name;
-                _member.Password = member.password;
+                var _member = db.Query<Members>("Select * from Members").FirstOrDefault();
+                return _member;
 
             }
-            return member;
         }
 
         public string GetMemberName(int memberId)
@@ -84,9 +78,9 @@ namespace StudyApp
             string memberName = "Unknown";
             using (var db = new SQLite.SQLiteConnection(app.DBPath))
             {
-                var member = (db.Table<Members>().Where(
-                    c => c.Id == memberId)).Single();
-                memberName = member.Name;
+                var member = db.Table<Members>().Where(
+                    c => c.Id == memberId).Single();
+                
             }
             return memberName;
         }
@@ -174,9 +168,5 @@ namespace StudyApp
         }
 
 
-        internal void Add(MemberViewModel member)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

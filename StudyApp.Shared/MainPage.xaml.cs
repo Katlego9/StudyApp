@@ -30,6 +30,6 @@ namespace StudyApp
             this.InitializeComponent();
         }
 
-       
-    
+
+    }
 }
