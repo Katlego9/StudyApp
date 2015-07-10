@@ -7,8 +7,10 @@ using Windows.UI.Xaml;
 namespace StudyApp
 {
 
+
     public class MemberViewModel : ViewModelBase
     {
+        
         #region Properties
 
         private int id = 0;
@@ -43,8 +45,8 @@ namespace StudyApp
             }
         }
 
-        private int password = 0;
-        public int Password
+        private string password = string.Empty;
+        public string Password
         {
             get
             { return password; }
@@ -63,17 +65,18 @@ namespace StudyApp
 
         private StudyApp.App app = (Application.Current as App);
 
-        public Members GetMember()
+        public Members getMember(string name, string pass)
         {
-            using (var db = new SQLite.SQLiteConnection(app.DBPath))
+            using (var db = new SQLite.SQLiteConnection(app.dbPath))
             {
-                var _member = db.Query<Members>("Select * from Members").FirstOrDefault();
-                return _member;
+                var _mem = db.Query<Members>("Select * from Members Where Name ='" + name + "' AND Password == '" + pass + "'").FirstOrDefault();
+                return _mem;
 
             }
         }
 
-        public string GetMemberName(int memberId)
+
+       /* public string GetMemberName(int memberId)
         {
             string memberName = "Unknown";
             using (var db = new SQLite.SQLiteConnection(app.DBPath))
@@ -84,41 +87,27 @@ namespace StudyApp
             }
             return memberName;
         }
+        */
 
-        public string SaveMember(MemberViewModel member)
+        public void SetMember(string name, string pass)
         {
-            string result = string.Empty;
-            using (var db = new SQLite.SQLiteConnection(app.DBPath))
+            using (var db = new SQLite.SQLiteConnection(app.dbPath))
             {
-                string change = string.Empty;
                 try
                 {
-                    var existingMember = (db.Table<Members>().Where(
-                        c => c.Id == member.Id)).SingleOrDefault();
-
-                    if (existingMember != null)
+                    int success = db.Insert(new Members()
                     {
-                        existingMember.Name = member.Name;
-                        existingMember.Password = member.Password;
-                        int success = db.Update(existingMember);
-                    }
-                    else
-                    {
-                        int success = db.Insert(new Members()
-                        {
-                            Id = member.id,
-                            Name = member.Name,
-                            Password = member.Password,
-                        });
-                    }
-                    result = "Success";
+                        Id = 0,
+                        Name = name,
+                        Password = pass,
+                    });
                 }
                 catch (Exception)
-                {
-                    result = "This member was not saved.";
+                { 
                 }
+                
             }
-            return result;
+            
         }
 
         /* public string DeleteMember(int memberId)
@@ -147,7 +136,7 @@ namespace StudyApp
              return result;
          }
          */
-        public int GetNewMemberId()
+       /* public int GetNewMemberId()
         {
             int memberId = 0;
             using (var db = new SQLite.SQLiteConnection(app.DBPath))
@@ -166,6 +155,7 @@ namespace StudyApp
             }
             return memberId;
         }
+        */
 
 
     }

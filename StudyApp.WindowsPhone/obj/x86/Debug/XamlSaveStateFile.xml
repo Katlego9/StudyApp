@@ -1,5 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
+    <LocalAssembly PathName="d:\visual studio 2013\projects\studyapp\studyapp\studyapp.windowsphone\obj\x86\debug\intermediatexaml\studyapp.windowsphone.exe" HashGuid="4cc2fb17-9a5e-627a-7a16-960184dddc86" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

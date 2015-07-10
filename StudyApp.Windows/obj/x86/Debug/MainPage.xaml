@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Hub x:Name="Study_App" Header="Study App" Margin="0,-10,0,10">
-            <HubSection x:Name="hubMain" Header="Main Options" Width="398">
+            <HubSection x:Name="hubMain" Header="Main Options" Width="398" Height="647">
                 <DataTemplate>
                     <Grid Margin="-25,0,1.167,0" Height="499">
                         <StackPanel HorizontalAlignment="Left" Height="499" VerticalAlignment="Top" Width="393" Margin="10,0,0,0">
@@ -26,13 +26,7 @@
                     <Grid Height="499" Margin="0,0,1.5,0">
                         <StackPanel HorizontalAlignment="Left" Height="489" VerticalAlignment="Top" Width="376" Margin="0,10,0,0">
                             <TextBlock TextWrapping="Wrap" Text="Please provide the number of subjects you are enrolled:" FontSize="15" Margin="0,0,-0.167,0" Height="20"/>
-                            <TextBox TextWrapping="Wrap" Margin="0,0,277.833,0"/>
-                            <Button Content="Generate Subjects Input" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50"/>
                             <TextBlock TextWrapping="Wrap" Text="Subject 1" FontSize="18" Margin="0,0,-8,0" Height="22"/>
-                            <TextBox TextWrapping="Wrap" Margin="0,0,2,0" Height="32"/>
-                            <TextBlock TextWrapping="Wrap" Text="Desired Mark" FontSize="18" Margin="0,0,-8,0" Height="22"/>
-                            <TextBox TextWrapping="Wrap" Margin="0,0,277.833,0" Height="32"/>
-                            <TextBlock TextWrapping="Wrap" Text="Subject 2" FontSize="18" Margin="0,0,-8,0" Height="22"/>
                             <TextBox TextWrapping="Wrap" Margin="0,0,2,0" Height="32"/>
                             <TextBlock TextWrapping="Wrap" Text="Desired Mark" FontSize="18" Margin="0,0,-8,0" Height="22"/>
                             <TextBox TextWrapping="Wrap" Margin="0,0,277.833,0" Height="32"/>

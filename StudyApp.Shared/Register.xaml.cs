@@ -22,6 +22,7 @@ namespace StudyApp
     /// </summary>
     public sealed partial class Register : Page
     {
+       
         public Register()
         {
             this.InitializeComponent();
@@ -29,7 +30,24 @@ namespace StudyApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LogIn));
+            var objRegister = new MemberViewModel();
+            string name = string.Empty;
+            string pass = string.Empty;
+
+            try
+            {
+                name = txbName.Text;
+                pass = txbPass.Text;
+
+                objRegister.SetMember(name, pass);
+                this.Frame.Navigate(typeof(LogIn));
+                
+            }
+            catch (Exception)
+            {
+                txtoutput.Text = "Not successful.";
+            }
+           
         }
     }
 }

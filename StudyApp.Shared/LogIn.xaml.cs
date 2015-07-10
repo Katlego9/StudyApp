@@ -29,7 +29,33 @@ namespace StudyApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            
+            var objLogin = new MemberViewModel();
+
+            string name = string.Empty;
+            string pass = string.Empty;
+            name = txbName.Text;
+            pass = txbPassword.Text;
+
+            try
+            {
+                var confirm = objLogin.getMember(name,pass);
+                if (confirm != null)
+                {
+                    this.Frame.Navigate(typeof(MainPage));
+                }
+                else
+                {
+                    txtoutput.Text = "Not successful.";
+                }
+            }
+            catch (Exception)
+            {
+                txtoutput.Text = "Not successful.";
+            }
+           
+  
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

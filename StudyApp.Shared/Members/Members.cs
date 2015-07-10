@@ -5,12 +5,12 @@ using System.Text;
 
 namespace StudyApp
 {
-    class Members
+    public class Members
     {
-        [PrimaryKey]
+        [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Password { get; set; }
+        public string Password { get; set; }
 
     }
 }

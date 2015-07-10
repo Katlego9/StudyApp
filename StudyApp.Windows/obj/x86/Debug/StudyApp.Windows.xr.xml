@@ -61,8 +61,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
       <RootProperty Name="Header" />
       <RootProperty Name="Width" />
-      <RootProperty Name="ContentTemplate" />
       <RootProperty Name="Height" />
+      <RootProperty Name="ContentTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />

@@ -15,21 +15,21 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Members.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MembersViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MemberViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\Members.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\MembersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\MemberViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SQLiteAsync.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)LogIn.xaml">
