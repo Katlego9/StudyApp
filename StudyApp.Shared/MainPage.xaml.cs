@@ -32,7 +32,8 @@ namespace StudyApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Study_App.ScrollToSection(SectionAdd);
+         
         }
 
 
