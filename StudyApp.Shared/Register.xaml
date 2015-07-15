@@ -9,16 +9,15 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock HorizontalAlignment="Left" Margin="85,30,0,0" TextWrapping="Wrap" Text="Study App" VerticalAlignment="Top" Height="44" Width="141" FontSize="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="25,197,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="25,262,0,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txbName" HorizontalAlignment="Left" Margin="192,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <TextBox x:Name="txbPass" HorizontalAlignment="Left" Margin="192,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <TextBox HorizontalAlignment="Left" Margin="192,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="63,323,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click"/>
-        <Button Content="Reset" HorizontalAlignment="Left" Margin="209,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.208" Width="88"/>
+        <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="txtPassword" HorizontalAlignment="Left" Margin="25,197,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="txtConfirm" HorizontalAlignment="Left" Margin="25,262,0,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txbUsername" HorizontalAlignment="Left" Margin="192,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="63,323,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="209,323,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.208" Width="88" Click="btnReset_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="25,79,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top" FontSize="25"/>
-        <TextBlock x:Name="txtoutput" HorizontalAlignment="Left" Margin="48,383,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="pwbPass" HorizontalAlignment="Left" Margin="192,197,0,0" VerticalAlignment="Top" Width="128"/>
+        <PasswordBox x:Name="pwbConfirm" HorizontalAlignment="Left" Margin="192,252,0,0" VerticalAlignment="Top" Width="128"/>
 
     </Grid>
 </Page>

@@ -22,7 +22,13 @@ namespace StudyApp
     /// </summary>
     public sealed partial class Register : Page
     {
-       
+
+        private async void messageBox(string msg)
+        {
+            var msgDisplay = new Windows.UI.Popups.MessageDialog(msg);
+            await msgDisplay.ShowAsync();
+        }
+
         public Register()
         {
             this.InitializeComponent();
@@ -33,21 +39,51 @@ namespace StudyApp
             var objRegister = new MemberViewModel();
             string name = string.Empty;
             string pass = string.Empty;
+            string confirm = string.Empty;
 
-            try
-            {
-                name = txbName.Text;
-                pass = txbPass.Text;
+            string msg;
+            name = txbUsername.Text;
+            pass = pwbPass.Password;
+            confirm = pwbConfirm.Password;
 
-                objRegister.SetMember(name, pass);
-                this.Frame.Navigate(typeof(LogIn));
-                
-            }
-            catch (Exception)
+            if ((name != "") && (pass != "") && (confirm != ""))
             {
-                txtoutput.Text = "Not successful.";
+                if (pass == confirm)
+                {
+                    try
+                    {
+                        objRegister.SetMember(name, pass);
+                        msg = "Registration successful";
+                        this.Frame.Navigate(typeof(LogIn));
+
+                    }
+                    catch (Exception)
+                    {
+                        msg = "Registration unsuccessful";
+
+                    }
+                    messageBox(msg);
+                }
+                else
+                {
+                    messageBox("Passwords do not match, please try again");
+                    pwbPass.Password = "";
+                    pwbConfirm.Password = "";
+                    
+                }
             }
-           
+            else
+            {
+                messageBox("Please fill all the fields");
+            }
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txbUsername.Text = "";
+            pwbPass.Password = "";
+            pwbConfirm.Password = "";
+
         }
     }
 }

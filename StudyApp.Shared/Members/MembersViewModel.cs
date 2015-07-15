@@ -44,6 +44,26 @@ namespace StudyApp
             }
             return members;
         }
+        public ObservableCollection<MemberViewModel> GetAllMembers()
+        {
+            members = new ObservableCollection<MemberViewModel>();
+            using (var db = new SQLite.SQLiteConnection(app.dbPath))
+            {
+                var q = db.Query<Members>("select * from members");
+                foreach (var _member in q)
+                {
+                    var member = new MemberViewModel()
+                    {
+                        Id = _member.Id,
+                        Name = _member.Name,
+                        Password = _member.Password,
+
+                    };
+                    members.Add(member);
+                }
+            }
+            return members;
+        }
 
     }
 }

@@ -19,6 +19,14 @@ namespace StudyApp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
         private global::Windows.UI.Xaml.Controls.HubSection hubMain; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.HubSection SectionAdd; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.HubSection SectionReminder; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.HubSection SectionStudy; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.HubSection SectionReport; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
         private bool _contentLoaded;
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
@@ -33,6 +41,10 @@ namespace StudyApp
  
             Study_App = (global::Windows.UI.Xaml.Controls.Hub)this.FindName("Study_App");
             hubMain = (global::Windows.UI.Xaml.Controls.HubSection)this.FindName("hubMain");
+            SectionAdd = (global::Windows.UI.Xaml.Controls.HubSection)this.FindName("SectionAdd");
+            SectionReminder = (global::Windows.UI.Xaml.Controls.HubSection)this.FindName("SectionReminder");
+            SectionStudy = (global::Windows.UI.Xaml.Controls.HubSection)this.FindName("SectionStudy");
+            SectionReport = (global::Windows.UI.Xaml.Controls.HubSection)this.FindName("SectionReport");
         }
     }
 }

@@ -75,37 +75,16 @@ namespace StudyApp
             }
         }
 
-
-       /* public string GetMemberName(int memberId)
-        {
-            string memberName = "Unknown";
-            using (var db = new SQLite.SQLiteConnection(app.DBPath))
-            {
-                var member = db.Table<Members>().Where(
-                    c => c.Id == memberId).Single();
-                
-            }
-            return memberName;
-        }
-        */
-
         public void SetMember(string name, string pass)
         {
             using (var db = new SQLite.SQLiteConnection(app.dbPath))
             {
-                try
+                int success = db.Insert(new Members()
                 {
-                    int success = db.Insert(new Members()
-                    {
-                        Id = 0,
-                        Name = name,
-                        Password = pass,
-                    });
-                }
-                catch (Exception)
-                { 
-                }
-                
+                     Id = 0,
+                     Name = name,
+                     Password = pass,
+                });
             }
             
         }

@@ -27,40 +27,58 @@ namespace StudyApp
             this.InitializeComponent();
         }
 
+        private async void messageBox(string msg)
+        {
+            var msgDisplay = new Windows.UI.Popups.MessageDialog(msg);
+            await msgDisplay.ShowAsync();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            string message;
             var objLogin = new MemberViewModel();
 
             string name = string.Empty;
             string pass = string.Empty;
             name = txbName.Text;
-            pass = txbPassword.Text;
+            pass = pwbPass.Password;
 
-            try
+            if ((name != "") && (pass != ""))
             {
-                var confirm = objLogin.getMember(name,pass);
-                if (confirm != null)
+                try
                 {
-                    this.Frame.Navigate(typeof(MainPage));
+                    var confirm = objLogin.getMember(name, pass);
+                    if (confirm != null)
+                    {
+                        message = "Login successful" + "\nWelcome " + confirm.Name;
+                        this.Frame.Navigate(typeof(MainPage));
+
+                    }
+                    else
+                    {
+                        message = "Login not successful, incorrect credentials";
+                        txbName.Text = "";
+                        pwbPass.Password = "";
+                    }
+                    messageBox(message);
                 }
-                else
+                catch (Exception)
                 {
-                    txtoutput.Text = "Not successful.";
                 }
             }
-            catch (Exception)
+            else
             {
-                txtoutput.Text = "Not successful.";
+                messageBox("Please fill all fields.");
             }
-           
-  
-            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Register));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
