@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using StudyApp.Subjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,12 +31,24 @@ namespace StudyApp
             this.InitializeComponent();
         }
 
+        private async void messageBox(string msg)
+        {
+            var msgDisplay = new Windows.UI.Popups.MessageDialog(msg);
+            await msgDisplay.ShowAsync();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Study_App.ScrollToSection(SectionAdd);
          
         }
 
+        private void btnAddSubject_Click(object sender, RoutedEventArgs e)
+        {
+            string message;
+            var objSubject = new SubjectViewModel();
 
-    }
+            string sbjName = string.Empty;
+            int sbjMark = 0;
+        
 }

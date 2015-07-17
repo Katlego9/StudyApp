@@ -80,5 +80,15 @@ namespace StudyApp
         {
             
         }
+
+        private void txtforgot_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void hpbForgot_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FogotPage));
+        }
     }
 }

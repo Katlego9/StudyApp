@@ -6,8 +6,6 @@ using Windows.UI.Xaml;
 
 namespace StudyApp
 {
-
-
     public class MemberViewModel : ViewModelBase
     {
         
@@ -69,7 +67,7 @@ namespace StudyApp
         {
             using (var db = new SQLite.SQLiteConnection(app.dbPath))
             {
-                var _mem = db.Query<Members>("Select * from Members Where Name ='" + name + "' AND Password == '" + pass + "'").FirstOrDefault();
+                var _mem = db.Query<Members>("Select * from Members Where Name ='" + name + "' AND Password = '" + pass + "'").FirstOrDefault();
                 return _mem;
 
             }
@@ -89,6 +87,15 @@ namespace StudyApp
             
         }
 
+        public Members getForgot(string name)
+        {
+            using (var db = new SQLite.SQLiteConnection(app.dbPath))
+            {
+                var _mem = db.Query<Members>("Select * from Members where name = '" + name + "'").FirstOrDefault();
+                return _mem;  
+
+            }
+        }
         /* public string DeleteMember(int memberId)
          {
              string result = string.Empty;

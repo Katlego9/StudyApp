@@ -25,12 +25,20 @@
                 <DataTemplate>
                     <Grid Height="499" Margin="0,0,1.5,0">
                         <StackPanel HorizontalAlignment="Left" Height="489" VerticalAlignment="Top" Width="376" Margin="0,10,0,0">
-                            <TextBlock TextWrapping="Wrap" Text="Please provide the number of subjects you are enrolled:" FontSize="15" Margin="0,0,-0.167,0" Height="20"/>
-                            <TextBlock TextWrapping="Wrap" Text="Subject 1" FontSize="18" Margin="0,0,-8,0" Height="22"/>
-                            <TextBox TextWrapping="Wrap" Margin="0,0,2,0" Height="32"/>
-                            <TextBlock TextWrapping="Wrap" Text="Desired Mark" FontSize="18" Margin="0,0,-8,0" Height="22"/>
-                            <TextBox TextWrapping="Wrap" Margin="0,0,277.833,0" Height="32"/>
-                            <Button Content="Submit" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50"/>
+                            <TextBlock x:Name="txtHeading" TextWrapping="Wrap" FontSize="15" Margin="0,0,-0.167,0" Height="20">
+                            	<Run Text="Please provide the"/>
+                            	<Run Text=" "/>
+                            	<Run Text="subjects you are enrolled:"/>
+                            </TextBlock>
+                            <TextBlock x:Name="txtSubj" TextWrapping="Wrap" Text="Subject" FontSize="18" Margin="0,0,-8,0" Height="22"/>
+                            <TextBox x:Name="txbAddSubject" TextWrapping="Wrap" Margin="0,0,2,0" Height="32"/>
+                            <TextBlock x:Name="txtGoal" TextWrapping="Wrap" FontSize="18" Margin="0,0,-8,0" Height="22">
+                            	<Run Text="Goal"/>
+                            	<Run Text=" Mark"/>
+                            </TextBlock>
+                            <TextBox x:Name="txbGoalMark" TextWrapping="Wrap" Margin="0,0,277.833,0" Height="32"/>
+                            <Button x:Name="btnAddSubject" Content="Submit" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50" Click="btnAddSubject_Click"/>
+                            <ListView x:Name="lstView" Height="300" Margin="0,0,-0.167,0"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

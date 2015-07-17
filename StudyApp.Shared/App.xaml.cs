@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using StudyApp.Subjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,6 +61,7 @@ namespace StudyApp
             using (var dbase = new SQLite.SQLiteConnection(dbPath))
             {
                 dbase.CreateTable<Members>();
+                dbase.CreateTable<Subject>();
             }
 #endif
            

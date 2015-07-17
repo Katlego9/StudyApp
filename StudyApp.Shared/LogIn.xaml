@@ -13,10 +13,11 @@
             <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" FontSize="18"/>
             <TextBlock x:Name="txtPAss" HorizontalAlignment="Left" Margin="25,197,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="18"/>
             <TextBox x:Name="txbName" HorizontalAlignment="Left" Margin="192,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-            <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="189,252,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click"/>
+            <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="189,289,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="25,79,0,0" TextWrapping="Wrap" Text="LogIn" VerticalAlignment="Top" FontSize="25"/>
-            <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="22,252,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_1"/>
+            <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="22,289,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_1"/>
             <PasswordBox x:Name="pwbPass" HorizontalAlignment="Left" Margin="192,187,0,0" VerticalAlignment="Top" Width="128"/>
+            <HyperlinkButton x:Name="hpbForgot" Content="Forgot Password.." HorizontalAlignment="Left" Margin="75,243,0,0" VerticalAlignment="Top" FontSize="17" Width="197" Click="hpbForgot_Click"/>
         </Grid>
 
     </Grid>
